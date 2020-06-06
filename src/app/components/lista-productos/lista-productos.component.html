@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>NOMBRE</th>
+                    <th>MARCA</th>
+                    <th>PRECIO</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let producto of productos">
+                    <td> {{ producto.nombre }} </td>
+                    <td>{{ producto.marca }}</td>
+                    <td>${{ producto.precio }}</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "ejercicioFireBase",
+      "public": "dist/ejercicioFireBase",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+<div class="row text-right">
+    <div class="col">
+      <button *ngIf="!wantAdd" (click)="isAgregar( true )"
+              class="btn btn-primary ">
+        <i class="fa fa-plus"></i>
+        Agregar
+      </button>
+
+      <button *ngIf="wantAdd" (click)="isAgregar( false )"
+              class="btn btn-danger ">
+        <i class="fa fa-close"></i>
+        Cerrar
+      </button>
+    </div>
+  </div>
+  
+  <div class="row mt-2">
+    <div 
+        [ngClass]="{'col-md-9': wantAdd, 'col-md':!wantAdd}">
+      <app-catalogo></app-catalogo>
+    </div>
+
+    <div *ngIf="wantAdd" class="col-md-3 animated fadeInRight faster" >
+      <app-add-producto class="animated fadeInDown slower"></app-add-producto>
+    </div>
+
+
+
+  </div>

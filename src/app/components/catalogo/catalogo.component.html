@@ -1,0 +1,50 @@
+
+<div class="card-columns">
+
+      <div class="card text-center" *ngFor="let producto of productos">
+        <!-- <img src="..." class="card-img-top" alt="..."> -->
+        <div class="card-body">
+          <h5 class="card-title">{{ producto.nombre }}</h5>
+          <p class="card-text">{{ producto.marca }}</p>
+          <p class="card-text"><small class="text-muted">${{ producto.precio | number}}</small></p>
+          <span>
+
+              <button (click)="editar( producto )"
+                      class="btn btn-outline-warning mr-4"  data-toggle="modal" data-target="#exampleModal">
+                <i class="far fa-edit"></i>
+              </button>
+
+              <button (click)="eliminar( producto )" class="btn btn-outline-danger">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+          </span>
+
+          
+        </div>
+
+      </div>
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" data-backdrop="static"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          
+          <!-- En esta linea le pasamos el producto solo si esta editando -->
+          <app-add-producto [producto]="producto" [isProductoNuevo]="false"></app-add-producto>
+
+        </div>
+        
+      </div>
+
+    </div>
+  </div>
+</div>

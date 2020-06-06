@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ejerciciofirebasejs": {
+      "hosting": {
+        "ejercicioFireBase": [
+          "ejerciciofirebasejs"
+        ]
+      }
+    }
+  }
+}

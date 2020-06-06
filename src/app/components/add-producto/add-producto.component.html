@@ -1,0 +1,64 @@
+<form #frm="ngForm" (ngSubmit)="agregar(frm)" autocomplete="off">
+    
+     <div class="form-group row">
+              <input name="nombre"
+                     class="form-control"
+                     type="text"
+                     placeholder="nombre"
+                     #nombre= "ngModel"
+                     [(ngModel)]="producto.nombre"
+                     [ngClass]="{
+                            'is-invalid': nombre.invalid && nombre.touched,
+                            'is-valid': nombre.valid && nombre.touched
+                            }"
+                     required>
+              <!-- <span class="text-danger" *ngIf="nombre.invalid && nombre.touched">Este campo es obligatorio</span> -->
+              <small class="form-text text-danger" *ngIf="nombre.invalid && nombre.touched">Este campo es obligatorio</small>
+     </div>
+     
+     <div class="form-group row">
+              <input name="marca"
+                     class="form-control"
+                     type="text"
+                     placeholder="marca"
+                     #marca="ngModel"
+                     [(ngModel)]="producto.marca"
+                     [ngClass]="{
+                            'is-invalid': marca.invalid && marca.touched,
+                            'is-valid': marca.valid && marca.touched
+                            }"
+                     required>
+              <small class="form-text text-danger" *ngIf="marca.invalid && marca.touched">Este campo es obligatorio</small>
+     </div>
+     
+     <div class="form-group row">
+
+       <input name="precio"
+              class="form-control"
+              type="text"
+              placeholder="precio"
+              #precio="ngModel"
+              [(ngModel)]="producto.precio"
+              [ngClass]="{ 
+                     'is-invalid': precio.invalid && precio.touched, 
+                     'is-valid': precio.valid && precio.touched
+                     }"
+              required>
+       <small class="form-text text-danger" *ngIf="precio.invalid && precio.touched">Este campo es obligatorio</small>
+
+     </div>
+
+     <div *ngIf="isProductoNuevo" class="form-group row">
+       <button type="submit" class="btn btn-outline-primary btn-block">Agregar</button>
+     </div>
+     
+     <div *ngIf="!isProductoNuevo" class="form-group text-center">
+       
+       <button type="submit" class="btn btn-warning text-center mr-3">Editar</button>
+       
+       <button (click)="cancelar(frm)" type="button" class="btn btn-secondary text-center"  data-dismiss="modal">Cerrar</button>
+     
+     </div>
+     
+
+</form>
