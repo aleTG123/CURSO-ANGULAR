@@ -13,6 +13,8 @@ export class HomeComponent implements OnInit {
     console.log("Nueva cambio");
     console.log("Cambio 2");
     console.log("Cambio dologin");
+    console.log("Cmbio back");
+    
   }
 
 }
