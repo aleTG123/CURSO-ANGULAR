@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     console.log("Nueva cambio");
     console.log("Cambio 2");
+    console.log("Cambio dologin");
   }
 
 }
